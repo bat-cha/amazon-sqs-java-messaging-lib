@@ -80,7 +80,7 @@ publishing {
 					appendNode('scm').with {
 						appendNode('connection', 'git://github.com/bat-cha/amazon-sqs-java-messaging-lib.git')
 						appendNode('developerConnection', 'git@github.com:bat-cha/amazon-sqs-java-messaging-lib.git')
-						appendNode('url', 'http://github.com/bat-cha/amazon-sqs-java-messaging-lib')
+						appendNode('url', 'https://github.com/bat-cha/amazon-sqs-java-messaging-lib')
 					}
 				}
 			}
@@ -103,6 +103,10 @@ bintray {
    		name = 'org.batcha.aws.forks:amazon-sqs-java-messaging-lib'
    		desc = 'amazon-sqs-java-messaging-lib fork'
 		licenses = ['Apache-2.0']
-		labels = ['amazon-sqs-java-messaging-lib']		
+		labels = ['amazon-sqs-java-messaging-lib']
+		vcsUrl = 'https://github.com/bat-cha/amazon-sqs-java-messaging-lib'
+		version {
+                name = '1.0.1'                
+        }		
 	}
 }

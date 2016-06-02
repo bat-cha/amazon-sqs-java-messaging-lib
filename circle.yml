@@ -1,0 +1,30 @@
+machine:
+  java:
+    version: oraclejdk8
+
+general:
+  artifacts:
+    - "build/reports"
+    
+
+dependencies:
+  override:
+    - ./gradlew compileTestJava
+  cache_directories:  
+    - "~/.gradle" 
+    - "build"
+
+test:
+  post:
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
+    - find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
+  override:
+    - ./gradlew clean test:
+        timeout: 1800
+
+deployment:
+    bintray:
+        branch: [jmstimestamp]
+        commands:
+            - ./gradlew bintrayUpload
+        

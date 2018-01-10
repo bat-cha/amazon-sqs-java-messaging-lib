@@ -24,7 +24,7 @@ test:
 
 deployment:
     bintray:
-        branch: [jmstimestamp]
+        branch: [jmstimestamp, jmstimestamp-upgrade]
         commands:
             - ./gradlew bintrayUpload
         

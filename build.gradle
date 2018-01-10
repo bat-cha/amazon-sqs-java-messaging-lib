@@ -10,7 +10,7 @@ apply plugin: 'maven-publish'
 
 
 group = 'org.batcha.aws.forks'
-version = '1.0.1'
+version = '1.0.2'
 
 description = """Amazon SQS Java Messaging Library"""
 
@@ -24,7 +24,7 @@ repositories {
      maven { url "http://repo.maven.apache.org/maven2" }
 }
 dependencies {
-    compile group: 'com.amazonaws', name: 'aws-java-sdk-sqs', version:'1.10.77'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-sqs', version:'1.11.261'
     compile group: 'org.apache.geronimo.specs', name: 'geronimo-jms_1.1_spec', version:'1.1.1'
     testCompile group: 'junit', name: 'junit', version:'4.11'
     testCompile group: 'org.mockito', name: 'mockito-core', version:'1.10.8'
@@ -106,7 +106,7 @@ bintray {
 		labels = ['amazon-sqs-java-messaging-lib']
 		vcsUrl = 'https://github.com/bat-cha/amazon-sqs-java-messaging-lib'
 		version {
-                name = '1.0.1'                
+                name = '1.0.2'                
         }		
 	}
 }
